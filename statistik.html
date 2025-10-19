@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="de">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Einsatzstatistik | Freiwillige Feuerwehr Musterstadt</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+      integrity="sha512-pY1Hg1Dq+W8sELpAo0P5NdQ4KJIp4jOSAmhpX6wX6Z1GDZCBoBPXaGNsq4CPGK/c/pXHiY/VTruWvpbp0u0gmQ=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <link rel="stylesheet" href="css/style.css" />
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  </head>
+  <body>
+    <header>
+      <div class="top-bar">
+        <span><i class="fa-solid fa-phone"></i> 0421 123456</span>
+        <span><i class="fa-solid fa-location-dot"></i> Feuerwache Musterstadt, Hauptstraße 1</span>
+        <span><i class="fa-solid fa-clock"></i> Bereitschaft: 24/7</span>
+      </div>
+      <div class="navbar">
+        <div class="logo">
+          <img src="https://images.unsplash.com/photo-1521208914989-5a810fda9664?auto=format&fit=crop&w=200&q=80" alt="Feuerwehr Wappen" />
+          <span>Freiwillige Feuerwehr Musterstadt</span>
+        </div>
+        <nav>
+          <ul>
+            <li><a href="index.html"><i class="fa-solid fa-house"></i> Start</a></li>
+            <li>
+              <a href="geschichte.html"><i class="fa-solid fa-users"></i> Über Uns</a>
+              <div class="dropdown-menu">
+                <a href="geschichte.html">Geschichte</a>
+                <a href="mannschaft.html">Mannschaft</a>
+                <a href="jugendfeuerwehr.html">Jugendfeuerwehr</a>
+              </div>
+            </li>
+            <li><a href="fahrzeuge.html"><i class="fa-solid fa-truck-fire"></i> Technik</a></li>
+            <li>
+              <a href="einsatzprotokoll.html"><i class="fa-solid fa-fire-extinguisher"></i> Einsätze</a>
+              <div class="dropdown-menu">
+                <a href="einsatzprotokoll.html">Aktueller Einsatz</a>
+                <a href="einsatzarchiv.html">Archiv</a>
+                <a href="statistik.html">Statistik</a>
+              </div>
+            </li>
+            <li><a href="mitglied-werden.html"><i class="fa-solid fa-people-group"></i> Mitmachen</a></li>
+            <li>
+              <a href="kalender.html"><i class="fa-solid fa-ellipsis"></i> Mehr</a>
+              <div class="dropdown-menu">
+                <a href="kalender.html">Veranstaltungen</a>
+                <a href="galerie.html">Galerie</a>
+                <a href="downloads.html">Downloads</a>
+                <a href="faq.html">FAQ</a>
+                <a href="spenden.html">Spenden</a>
+              </div>
+            </li>
+          </ul>
+        </nav>
+      </div>
+    </header>
+
+    <main class="container">
+      <section class="section">
+        <h1>Einsatzstatistik 2023</h1>
+        <p>
+          Transparenz schafft Vertrauen: Wir dokumentieren unsere Einsätze detailliert, um Abläufe zu optimieren und Ressourcen zielgerichtet einzusetzen. Nachfolgende Diagramme geben einen Überblick über das vergangene Jahr.
+        </p>
+      </section>
+
+      <section class="section grid grid-2">
+        <article class="card">
+          <h2>Einsätze nach Kategorien</h2>
+          <canvas id="chartCategories" height="260"></canvas>
+        </article>
+        <article class="card">
+          <h2>Einsätze pro Monat</h2>
+          <canvas id="chartMonths" height="260"></canvas>
+        </article>
+      </section>
+
+      <section class="section">
+        <div class="card">
+          <h2>Stichpunkte</h2>
+          <ul>
+            <li>Gesamt: <strong>286 Einsätze</strong></li>
+            <li>Brandeinsätze: <strong>45</strong></li>
+            <li>Technische Hilfe: <strong>210</strong></li>
+            <li>Gefahrgut / ABC: <strong>12</strong></li>
+            <li>Fehlalarme: <strong>19</strong></li>
+          </ul>
+        </div>
+      </section>
+    </main>
+
+    <footer>
+      <div class="footer-grid">
+        <div>
+          <h5>Kontakt</h5>
+          <ul>
+            <li>Freiwillige Feuerwehr Musterstadt</li>
+            <li>Hauptstraße 1 · 12345 Musterstadt</li>
+            <li><a href="tel:0421123456">Tel: 0421 123456</a></li>
+            <li><a href="mailto:info@feuerwehr-musterstadt.de">info@feuerwehr-musterstadt.de</a></li>
+          </ul>
+        </div>
+        <div>
+          <h5>Schnelllinks</h5>
+          <ul>
+            <li><a href="mitglied-werden.html">Mitglied werden</a></li>
+            <li><a href="kalender.html">Termine</a></li>
+            <li><a href="faq.html">FAQ</a></li>
+            <li><a href="einsatzarchiv.html">Einsatzarchiv</a></li>
+          </ul>
+        </div>
+        <div>
+          <h5>Rechtliches</h5>
+          <ul>
+            <li><a href="impressum.html">Impressum</a></li>
+            <li><a href="datenschutz.html">Datenschutz</a></li>
+            <li><a href="downloads.html">Downloads</a></li>
+          </ul>
+        </div>
+        <div>
+          <h5>Notruf</h5>
+          <ul>
+            <li><strong>112</strong> – Feuerwehr & Rettungsdienst</li>
+            <li>Für Notfälle immer zuerst den Notruf wählen!</li>
+            <li><a href="spenden.html">Förderverein unterstützen</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <span>&copy; 2024 Freiwillige Feuerwehr Musterstadt</span>
+        <span>Gemeinsam. Ehrenamtlich. Für Musterstadt.</span>
+      </div>
+    </footer>
+
+    <script src="js/script.js"></script>
+    <script>
+      // Chart-Konfiguration für die Einsatzstatistik
+      document.addEventListener("DOMContentLoaded", () => {
+        const categoriesCtx = document.getElementById("chartCategories");
+        const monthsCtx = document.getElementById("chartMonths");
+
+        if (categoriesCtx) {
+          new Chart(categoriesCtx, {
+            type: "doughnut",
+            data: {
+              labels: ["Brandeinsätze", "Technische Hilfe", "Gefahrgut", "Fehlalarme"],
+              datasets: [
+                {
+                  data: [45, 210, 12, 19],
+                  backgroundColor: ["#c41e3a", "#f2695c", "#394867", "#8892b0"],
+                  borderWidth: 0,
+                },
+              ],
+            },
+            options: {
+              plugins: {
+                legend: {
+                  position: "bottom",
+                },
+              },
+            },
+          });
+        }
+
+        if (monthsCtx) {
+          new Chart(monthsCtx, {
+            type: "bar",
+            data: {
+              labels: ["Jan", "Feb", "Mrz", "Apr", "Mai", "Jun", "Jul", "Aug", "Sep", "Okt", "Nov", "Dez"],
+              datasets: [
+                {
+                  label: "Einsätze",
+                  data: [18, 20, 24, 28, 30, 26, 24, 23, 25, 22, 24, 22],
+                  backgroundColor: "#c41e3a",
+                  borderRadius: 8,
+                },
+              ],
+            },
+            options: {
+              plugins: {
+                legend: {
+                  display: false,
+                },
+              },
+              scales: {
+                y: {
+                  beginAtZero: true,
+                  ticks: {
+                    stepSize: 5,
+                  },
+                },
+              },
+            },
+          });
+        }
+      });
+    </script>
+  </body>
+</html>
